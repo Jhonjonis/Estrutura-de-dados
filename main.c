@@ -109,7 +109,7 @@ int main() {
                 break;
             }
 
-            printf("\nEntrada invalida! Por favor, digite um numero.\n");
+            printf("\nopcao invalida! Por favor, digite um numero.\n");
             while ((caractere = getchar()) != '\n' && caractere != EOF);
 
             if (caractere == EOF) {
@@ -129,7 +129,7 @@ int main() {
         }
 
         if (entradaInvalida) {
-            printf("\nEntrada invalida! Por favor, digite um numero.\n");
+            printf("\nopcao invalida! Por favor, digite um numero.\n");
             continue;
         }
 
