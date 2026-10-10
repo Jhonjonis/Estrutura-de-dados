@@ -1,13 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <ctype.h>
 
 #include "estruturas.h"
 
-
-// ========================================
 // PROTOTIPOS AUXILIARES
-// ========================================
+
 
 void criarPartida(
     Fila *fila,
@@ -46,72 +45,101 @@ void cancelarProximaPartida(
 void mostrarMenu();
 
 
-// ========================================
+
 // MAIN
-// ========================================
+
 
 int main() {
 
-    // ====================================
+
     // VETOR DE EQUIPES
-    // ====================================
+
 
     Equipe equipes[MAX_EQUIPES];
 
     int quantidadeEquipes = 0;
 
 
-    // ====================================
+
     // FILA
-    // ====================================
+
 
     Fila fila;
 
     inicializarFila(&fila);
 
 
-    // ====================================
+
     // LISTA DUPLAMENTE ENCADEADA
-    // ====================================
+
 
     NoPartida *historico = NULL;
 
 
-    // ====================================
+
     // PILHA
-    // ====================================
+
 
     NoPilha *pilha = NULL;
 
 
-    // ====================================
+
     // ABB
-    // ====================================
+
 
     NoArvore *arvore = NULL;
 
 
-    int opcao;
+    int opcao = -1;
 
 
-    // ====================================
+
     // MENU PRINCIPAL
-    // ====================================
+
 
     do {
 
         mostrarMenu();
 
         printf("\nEscolha uma opcao: ");
-        scanf("%d", &opcao);
+        if (scanf("%d", &opcao) != 1) {
+            int caractere;
+
+            if (feof(stdin)) {
+                break;
+            }
+
+            printf("\nEntrada invalida! Por favor, digite um numero.\n");
+            while ((caractere = getchar()) != '\n' && caractere != EOF);
+
+            if (caractere == EOF) {
+                break;
+            }
+
+            continue;
+        }
+
+        int caractere;
+        int entradaInvalida = 0;
+
+        while ((caractere = getchar()) != '\n' && caractere != EOF) {
+            if (!isspace((unsigned char)caractere)) {
+                entradaInvalida = 1;
+            }
+        }
+
+        if (entradaInvalida) {
+            printf("\nEntrada invalida! Por favor, digite um numero.\n");
+            continue;
+        }
 
 
         switch (opcao) {
 
 
-            // ============================
+
             // CADASTRAR EQUIPE
-            // ============================
+
 
             case 1:
 
@@ -129,9 +157,9 @@ int main() {
                 break;
 
 
-            // ============================
+
             // LISTAR EQUIPES
-            // ============================
+
 
             case 2:
 
@@ -143,9 +171,9 @@ int main() {
                 break;
 
 
-            // ============================
+
             // CRIAR PARTIDA
-            // ============================
+
 
             case 3:
 
@@ -158,9 +186,9 @@ int main() {
                 break;
 
 
-            // ============================
+
             // MOSTRAR FILA
-            // ============================
+
 
             case 4:
 
@@ -169,9 +197,9 @@ int main() {
                 break;
 
 
-            // ============================
+
             // REALIZAR PARTIDA
-            // ============================
+
 
             case 5:
 
@@ -187,9 +215,9 @@ int main() {
                 break;
 
 
-            // ============================
+
             // HISTORICO
-            // ============================
+
 
             case 6:
 
@@ -200,9 +228,9 @@ int main() {
                 break;
 
 
-            // ============================
+
             // RANKING
-            // ============================
+
 
             case 7:
 
@@ -214,9 +242,9 @@ int main() {
                 break;
 
 
-            // ============================
+
             // ABB
-            // ============================
+
 
             case 8:
 
@@ -238,9 +266,9 @@ int main() {
                 break;
 
 
-            // ============================
+
             // ALTERAR RESULTADO
-            // ============================
+
 
             case 9:
 
@@ -255,9 +283,9 @@ int main() {
                 break;
 
 
-            // ============================
+
             // CANCELAR PARTIDA
-            // ============================
+
 
             case 10:
 
@@ -269,9 +297,9 @@ int main() {
                 break;
 
 
-            // ============================
+
             // PILHA
-            // ============================
+
 
             case 11:
 

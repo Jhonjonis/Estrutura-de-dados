@@ -3,9 +3,9 @@
 #include "estruturas.h"
 
 
-// ========================================
+
 // INICIALIZAR FILA
-// ========================================
+
 
 void inicializarFila(Fila *fila) {
 
@@ -14,9 +14,9 @@ void inicializarFila(Fila *fila) {
 }
 
 
-// ========================================
+
 // VERIFICAR SE FILA ESTA VAZIA
-// ========================================
+
 
 int filaVazia(Fila *fila) {
 
@@ -28,9 +28,9 @@ int filaVazia(Fila *fila) {
 }
 
 
-// ========================================
+
 // ENFILEIRAR PARTIDA
-// ========================================
+
 
 void enfileirar(
     Fila *fila,
@@ -65,9 +65,9 @@ void enfileirar(
 }
 
 
-// ========================================
+
 // DESENFILEIRAR
-// ========================================
+
 
 Partida desenfileirar(
     Fila *fila
@@ -102,9 +102,9 @@ Partida desenfileirar(
 }
 
 
-// ========================================
+
 // MOSTRAR FILA
-// ========================================
+
 
 void mostrarFila(
     Fila *fila

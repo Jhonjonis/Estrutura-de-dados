@@ -3,9 +3,9 @@
 #include "estruturas.h"
 
 
-// ========================================
+
 // ADICIONAR AO HISTORICO
-// ========================================
+
 
 void adicionarHistorico(
     NoPartida **inicio,
@@ -51,9 +51,9 @@ void adicionarHistorico(
 }
 
 
-// ========================================
+
 // MOSTRAR HISTORICO
-// ========================================
+
 
 void mostrarHistorico(
     NoPartida *inicio
@@ -118,9 +118,9 @@ void mostrarHistorico(
 }
 
 
-// ========================================
+
 // BUSCAR PARTIDA PELO NUMERO
-// ========================================
+
 
 NoPartida *buscarPartidaHistorico(
     NoPartida *inicio,
