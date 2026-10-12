@@ -4,9 +4,9 @@
 #include "estruturas.h"
 
 
-// ========================================
+
 // EMPILHAR
-// ========================================
+
 
 void empilhar(
     NoPilha **topo,
@@ -33,9 +33,9 @@ void empilhar(
 }
 
 
-// ========================================
+
 // MOSTRAR PILHA
-// ========================================
+
 
 void mostrarPilha(
     NoPilha *topo

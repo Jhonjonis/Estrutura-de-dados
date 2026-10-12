@@ -1,9 +1,8 @@
 #include <stdio.h>
 #include <string.h>
 #include "estruturas.h"
-// ========================================
 // ORDENAR RANKING
-// ========================================
+
 
 void ordenarRanking(
     Equipe equipes[],
@@ -91,9 +90,9 @@ void ordenarRanking(
 }
 
 
-// ========================================
+
 // MOSTRAR RANKING
-// ========================================
+
 
 void mostrarRanking(
     Equipe equipes[],
